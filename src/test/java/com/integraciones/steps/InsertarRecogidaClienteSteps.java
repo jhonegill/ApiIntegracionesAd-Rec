@@ -34,9 +34,7 @@ public class InsertarRecogidaClienteSteps {
                         "    }");
     }
     public void consumirRecogidaCliente() {
-        String baseUri = ConfVariables.getHost();
-        String path = ConfVariables.getPathRecogidas();
-        responseRecogida = requestRecogida.when().post("" + baseUri + path + "/" + ConfVariables.getMetodoRecogidas() + "/");
+        responseRecogida = requestRecogida.when().post("" + ConfVariables.getHost() + ConfVariables.getPathRecogidas() + "/" + ConfVariables.getMetodoRecogidas() + "/");
     }
     public void generarRecogidas() {
 

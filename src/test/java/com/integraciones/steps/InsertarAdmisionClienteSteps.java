@@ -17,7 +17,6 @@ public class InsertarAdmisionClienteSteps {
     public static String numeroPreenvioResponse;
     public static ArrayList<String> listaPreenvios = new ArrayList<String>();
     public void configurarInsertarAdmision() {
-
         requestPreenvios = SerenityRest.given().log().all()
                 .header("x-app-signature", ConfVariables.getUsuario())
                 .header("x-app-security_token", ConfVariables.getToken())
@@ -67,7 +66,6 @@ public class InsertarAdmisionClienteSteps {
                         "}");
     }
     public void consumirInsertarAdmision() {
-
         for (int i = 1; i <= Integer.parseInt(ConfVariables.getCantidadPreenvios()); i++) {
             responsePreenvios = requestPreenvios.given().when().post("" + ConfVariables.getHost() + ConfVariables.getPaths() + "/" + ConfVariables.getInsertarAdmision() + "/");
             this.numerosDePreenvios();
