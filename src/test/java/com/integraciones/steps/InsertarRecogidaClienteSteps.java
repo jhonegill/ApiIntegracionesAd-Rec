@@ -1,7 +1,6 @@
 package com.integraciones.steps;
 
 import com.integraciones.ConfVariables;
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import net.serenitybdd.core.Serenity;
@@ -14,21 +13,16 @@ import net.serenitybdd.rest.SerenityRest;
 import static com.integraciones.steps.InsertarAdmisionClienteSteps.listaPreenvios;
 import static io.restassured.RestAssured.given;
 import static io.restassured.path.json.JsonPath.from;
-
 public class InsertarRecogidaClienteSteps {
-   // String listaNumPreenvios = numeroPreenvioResponse;
     String Preenvios = String.valueOf(listaPreenvios);
-    RequestSpecification requestRecogida = SerenityRest.given();
+    RequestSpecification requestRecogida;
     Response responseRecogida;
-
     public void configurarRecogida() {
-
         LocalDate hoy = LocalDate.now();
         LocalTime hora = LocalTime.now();
-        hora = hora.plusHours(1);
+        hora = hora.plusMinutes(5);
         LocalDateTime fechaCreacionResponse = LocalDateTime.of(hoy,hora);
-
-        requestRecogida.contentType(ContentType.JSON).log().all()
+        requestRecogida =   SerenityRest.given().log().all()
                 .header("x-app-signature", "" + ConfVariables.getUsuario() + "")
                 .header("x-app-security_token", "" + ConfVariables.getToken() + "")
                 .header("Content-Type", "application/json")
@@ -51,7 +45,6 @@ public class InsertarRecogidaClienteSteps {
                 .statusCode(200)
                 .extract().body().asString();
         from(datosRecogida);
-
         String mensajePreenviosAsociados;
         String preenviosAsociados;
         String mensajePreenviosNoIncluidos;
@@ -68,12 +61,8 @@ public class InsertarRecogidaClienteSteps {
             File csvFile = new File("Recogidas.csv");
            // File csvFile = new File("C:\\Users\\jhonegill\\Desktop\\Nueva carpeta\\Recogidas.csv");
             recogidasCsv = new PrintWriter(csvFile);
-            recogidasCsv.println(idRecogidaResponse);
-            recogidasCsv.println(mensajePreenviosAsociados);
-            recogidasCsv.println(preenviosAsociados);
-            recogidasCsv.println(mensajePreenviosNoIncluidos);
-            recogidasCsv.println(preenviosNoIncluidos);
-
+            recogidasCsv.println(idRecogidaResponse +"\n"+ mensajePreenviosAsociados +"\n"
+                    + preenviosAsociados +"\n"+ mensajePreenviosNoIncluidos +"\n"+ preenviosNoIncluidos);
         } catch (Exception e) {
         } finally {
             if (recogidasCsv != null) {

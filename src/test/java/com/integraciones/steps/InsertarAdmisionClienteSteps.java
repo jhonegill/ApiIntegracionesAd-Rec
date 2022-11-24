@@ -6,14 +6,10 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.rest.SerenityRest;
-
 import java.io.File;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-
-import static io.restassured.RestAssured.given;
 import static io.restassured.path.json.JsonPath.from;
-
 
 public class InsertarAdmisionClienteSteps {
     RequestSpecification requestPreenvios;
@@ -22,7 +18,7 @@ public class InsertarAdmisionClienteSteps {
     public static ArrayList<String> listaPreenvios = new ArrayList<String>();
     public void configurarInsertarAdmision() {
 
-        requestPreenvios = SerenityRest.given().contentType(ContentType.JSON).log().all()
+        requestPreenvios = SerenityRest.given().log().all()
                 .header("x-app-signature", ConfVariables.getUsuario())
                 .header("x-app-security_token", ConfVariables.getToken())
                 .header("Content-Type", "application/json")
@@ -71,11 +67,9 @@ public class InsertarAdmisionClienteSteps {
                         "}");
     }
     public void consumirInsertarAdmision() {
-        String baseUri = ConfVariables.getHost();
-        String path = ConfVariables.getPaths();
-        for (int i = 1; i <= Integer.parseInt(ConfVariables.getCantidadPreenvios()); i++) {
 
-            responsePreenvios = requestPreenvios.given().when().post("" + baseUri + path + "/" + ConfVariables.getInsertarAdmision() + "/");
+        for (int i = 1; i <= Integer.parseInt(ConfVariables.getCantidadPreenvios()); i++) {
+            responsePreenvios = requestPreenvios.given().when().post("" + ConfVariables.getHost() + ConfVariables.getPaths() + "/" + ConfVariables.getInsertarAdmision() + "/");
             this.numerosDePreenvios();
             listaPreenvios.add(numeroPreenvioResponse);
         }

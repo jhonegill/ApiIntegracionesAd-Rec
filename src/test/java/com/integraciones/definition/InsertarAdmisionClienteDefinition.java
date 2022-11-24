@@ -8,20 +8,14 @@ import cucumber.api.java.en.When;
 import net.thucydides.core.annotations.Steps;
 
 public class InsertarAdmisionClienteDefinition {
-
     @Steps
     InsertarAdmisionClienteSteps preEnviosSteps;
-
-
     @Given("^registro de datos cliente credito y destinatario$")
     public void registroDeDatosClienteCreditoYDestinatario() {preEnviosSteps.configurarInsertarAdmision();}
-    @When("^consume de servicio InsertarAdmision$")
-    public void consumeDeServicioInsertarAdmision() {
-        preEnviosSteps.consumirInsertarAdmision();
-    }
+    @When("^consume el metodo  llamado servicio InsertarAdmision$")
+    public void consumeElMetodoLlamadoServicioInsertarAdmision() {preEnviosSteps.consumirInsertarAdmision();}
     @Then("^generacion de numero de preenvio$")
     public void generacion_de_numero_de_preenvio() {
         preEnviosSteps.numerosDePreenvios();
     }
-
 }

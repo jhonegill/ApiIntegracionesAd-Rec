@@ -2,21 +2,15 @@ package com.integraciones;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.io.IOException;
 import java.util.Optional;
 import java.util.Properties;
-
 import static com.ibm.icu.impl.ClassLoaderUtil.getClassLoader;
-
 public class ApplicationProperties {
-
-
     private static Properties instance = null;
     private static final String APPLICATION_PREFIX = "application";
     private static final String APPLICATION_SUFFIX = "properties";
     static final Logger LOGGER = LoggerFactory.getLogger(ApplicationProperties.class);
-
     public static synchronized Properties getInstance(){
         if(instance == null){
             instance = loadPropertiesFile();
@@ -24,7 +18,6 @@ public class ApplicationProperties {
         return instance;
     }
     private ApplicationProperties(){
-
     }
     private  static Properties loadPropertiesFile(){
     //  String environment = Optional.ofNullable(System.getenv("env")).orElse("apitesting");
