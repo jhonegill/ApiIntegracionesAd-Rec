@@ -9,7 +9,7 @@ import static com.ibm.icu.impl.ClassLoaderUtil.getClassLoader;
 public class ApplicationProperties {
     private static Properties instance = null;
     private static final String APPLICATION_PREFIX = "application";
-    private static final String APPLICATION_SUFFIX = "properties";
+    private static final String APPLICATION_SUFFIX = "csv";
     static final Logger LOGGER = LoggerFactory.getLogger(ApplicationProperties.class);
     public static synchronized Properties getInstance(){
         if(instance == null){

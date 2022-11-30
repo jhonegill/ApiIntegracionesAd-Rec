@@ -1,13 +1,13 @@
-#Apuntamiento host y servicios post InsertarAdmision e InsertarRecogidaCliente Qa
+##******** Apuntamiento host y servicios post InsertarAdmision e InsertarRecogidaCliente Apitesting ********##
 host=https://qawww3.interrapidisimo.co
 paths=/ApiVentaCreditoQA/api/Admision
 pathrecogidas =/ApiVentaCreditoQA/api/Recogida
-#Metodos de generar preenvio y recogida
+##******** Metodos de generar preenvio y recogida ********##
 metodopreenvios=InsertarAdmision
 metodorecogidas=InsertarRecogidaCliente
 #Cantidad de Preenvios a crear
 cantidadpreenvios=1
-#Datos de solicitud del Json metodo post InsertarAdmision
+##******** Datos de solicitud del Json metodo post InsertarAdmision ********##
 idservicio=3
 idtipoentrega=1
 valordeclarado= 150000
@@ -45,7 +45,8 @@ numerodefolios=7
 codigorapiradicado=25541545
 idclientecredito=1057
 codigoconvenioremitente=2980
-#Cabeceras de los servicios post InsertarAdmision e InsertarRecogidaCliente
+nit=860026123
+##******** Cabeceras de los servicios post InsertarAdmision e InsertarRecogidaCliente ********##
 usuario=userDirectvQA
 token=bearer CV2-1AzTloXZvGTD6vA83YGmgsfGkc6Cvka_n57UvHCZFJeyg7PY344liBFKfeSu6qY1JeM9Su-nbkJMPotaAi8pfyEKXRB-ZnReKXi8QP1fZZCK3cDCE3oqWW73lcYJUr7tibny5PwNxSofs7BiT4jMzdXqIcd_s6h_ElSR1jH9Uwi39-3ZlyKRWLdSxBWD_4Uoj6hosfHoc0D4XGGVbMzqtJ5u83kKAyB_HTcXtzM
 

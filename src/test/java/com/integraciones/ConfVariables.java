@@ -182,6 +182,10 @@ public class ConfVariables {
         return Optional.ofNullable(System.getenv("pathrecogidas"))
                 .orElse((String) ApplicationProperties.getInstance().get("pathrecogidas"));
     }
+    public static String getNit() {
+        return Optional.ofNullable(System.getenv("nit"))
+                .orElse((String) ApplicationProperties.getInstance().get("nit"));
+    }
 }
 
 

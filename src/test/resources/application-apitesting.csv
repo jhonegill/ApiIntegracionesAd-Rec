@@ -1,13 +1,13 @@
-#Apuntamiento host y servicios post InsertarAdmision e InsertarRecogidaCliente Apitesting
+##******** Apuntamiento host y servicios post InsertarAdmision e InsertarRecogidaCliente Apitesting ********##
 host=https://apitesting.interrapidisimo.co
 paths=/ApiVentaCredito010/api/Admision
 pathrecogidas =/ApiVentaCredito010/api/Recogida
-#Metodos de generar preenvio y recogida
+##******** Metodos de generar preenvio y recogida ********##
 metodopreenvios=InsertarAdmision
 metodorecogidas=InsertarRecogidaCliente
-#Cantidad de Preenvios a crear
+##******** Cantidad de Preenvios a crear  ********##
 cantidadpreenvios=2
-#Datos de solicitud del Json metodo post InsertarAdmision
+##******** Datos de solicitud del Json metodo post InsertarAdmision ********##
 idservicio=3
 idtipoentrega=1
 valordeclarado= 150000
@@ -45,7 +45,8 @@ numerodefolios=7
 codigorapiradicado=25541545
 idclientecredito=996
 codigoconvenioremitente=10553
-#Cabeceras de los servicios post InsertarAdmision e InsertarRecogidaCliente
+nit=860026123
+##******** Cabeceras de los servicios post InsertarAdmision e InsertarRecogidaCliente ********##
 usuario=userCopidrogaspruebasPRUE
 token=bearer 1aaCeHNgpuCU-3sQ8oaNDL7frGBxd7lh6IyJh-eGS9HfN48coZVueh9gLh9ffAUx7GrBvuC823tma2rZlTPKpzUtj9rZBeOCWbTEadRENduskbUzieNDy-sMzPoWih_jnkX1Tl0XFT8ZLPdT8KLBgH96dQsIPl2mIyodA4V72JHBNqhHCplePmptMQ9heG4LBHNq0AoCZKV2Wmc5gHuC_der75zJzTmOS6xAiMk2l4TziRWqwZkYRt2JKU3dqLGd
 

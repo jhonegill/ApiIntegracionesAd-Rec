@@ -85,7 +85,7 @@ public class InsertarAdmisionClienteSteps {
         try {
             File csvFile = new File("Preenvios.csv");
             preenviosCsv = new PrintWriter(csvFile);
-            preenviosCsv.println(listaDePreenvios);
+            preenviosCsv.println("nitCliente\n"+ConfVariables.getNit()+"\n"+ "numeroPreenvio\n"+listaDePreenvios);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
